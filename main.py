@@ -14,24 +14,47 @@
 # (pokud zadá neplatné zvíře, nebo bude chtít odbrat více zvířat než je aktuálně v zoo vypíše se mu: "Neco si zadal špatně")
 # funkce vypis - vypíše všechna zvířata, která jsou aktuálně v zoo
 
-
-# Tuto část dopiš
-
-def pridej(zvire, pocet):
-    
-def odeber(zvire, pocet):
-#def vypis():
-    
-
-
-
-
-# Tuto část nepřepisovat
-
 # Počty zvířat v zoo
 tygri = 0
 lvy = 0
 opice = 0
+
+# Tuto část dopiš
+
+def pridej(zvire, pocet):
+    global tygri
+    global lvy
+    global opice
+    if zvire == 'tygri':
+        tygri =+ pocet
+    elif zvire == 'lvy':
+        lvy =+ pocet
+    elif zvire == 'opice':
+        opice =+ pocet
+    else:
+        print("Neco si zadal špatně")
+    
+def odeber(zvire, pocet):
+    global tygri
+    global lvy
+    global opice
+    if zvire == 'tygri':
+        tygri -= pocet
+    elif zvire == 'lvy':
+        lvy -= pocet
+    elif zvire == 'opice':
+        opice -= pocet
+    else:
+        print("Neco si zadal špatně")
+
+
+def vypis():
+    print(f"Počet tygru:{tygri},Počet lvu:{lvy},Počet opic:{opice}")
+    
+
+# Tuto část nepřepisovat
+
+
 
 # informace pro cyklus zda se má opakovat či ne
 opakovat = "ano"
@@ -54,7 +77,7 @@ while(opakovat=="ano"):
         pocet = int(input("Zadejte počet těchto zvířat"))
         pridej(zvire,pocet)
     elif cislo==2:
-        zvire = input("Zadejte zvířata která chcete přidat(tygri,lvy,opice)")
+        zvire = input("Zadejte zvířata která chcete odebrat(tygri,lvy,opice)")
         pocet = int(input("Zadejte počet těchto zvířat"))
         odeber(zvire,pocet)
     elif cislo==3:
